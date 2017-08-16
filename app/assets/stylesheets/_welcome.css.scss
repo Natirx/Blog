@@ -1,0 +1,89 @@
+@import "varib";
+.col-1, .col-2, .col-3,.col-img{
+	float: left;
+}
+
+.col-1 {
+  text-align: center;
+	width: 45%;
+  padding: 0 5% 0 2.5%;
+  
+}
+.col-2, .col-3 {
+  width: 27.5%;
+	padding: 0 2.5%;
+}
+.col {
+  float: left;
+  width: 100%;
+  padding: 0 3% 0 3%;
+  h2,h3,p{
+    text-align: center;
+
+  }
+}
+.col-img {
+  width: 31%;
+  margin: 1%;
+}
+.col-img img {
+  display: block;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  
+}
+.homepage {
+	h2 {
+      font-size:1.1rem;
+      text-transform: uppercase;
+	}
+
+  h3 {
+    font-size: 1.35rem;
+    font-weight: 400;
+    margin-bottom: .5em;
+  }
+  hr{
+    margin: 3em auto;
+  }
+  a {
+    text-decoration: none;
+    color: $dark;
+    &:hover {
+      color: $highlight;
+    }
+
+  }
+.date{
+  font-size: .85em;
+  margin-bottom: 2em;
+  color: $light;
+
+}
+  p {
+    margin:0 0 .75em 0;
+  }
+
+
+}
+.about {
+  padding: 0 7.5% 0 0;
+  a {
+    color: $highlight;
+    font-weight: 700;
+    text-decoration: none;
+  }
+}
+@media screen and (max-width: 768px){
+  .col-img{
+    width: 48%;
+    margin: 1%;
+  }
+}
+@media screen and (max-width: 480px){
+  .col-img{
+    width:98%;
+    margin: 1%;
+  }
+}

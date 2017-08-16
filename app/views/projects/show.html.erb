@@ -1,0 +1,35 @@
+<div id="post_show_content" class="skinny_wrapper wrapper_padding">
+  <header>
+    <p class="date"><%= @project.created_at.strftime("%A, %b %d") %></p>
+    <h1><%=@project.title %></h1>
+    <%= image_tag @project.picture.url(:large) %>
+    <hr>
+  </header>
+  <div id="content">
+    <%= markdown @project.description%>
+    <div class="button_wrapper">
+    <a href="<%= @project.link %>" class="project_button" target="_blank">Visit <%= @project.title %></a>
+  </div>
+  </div>
+  <% if user_signed_in? %>
+      <div id="admin_links">
+        <%= link_to "Edit Project", edit_project_path(@project) %>
+        <%= link_to "Delete Project", project_path(@project), method: :delete, data: {confirm: "Are u sure?"} %>
+      </div>
+  <% end %>
+  <hr>
+  <div id="disqus_thread"></div>
+  <script>
+
+      var disqus_shortname = 'portfolio';
+
+      (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+          s.src = '//blogg-1.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>

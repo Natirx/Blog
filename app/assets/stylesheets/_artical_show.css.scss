@@ -1,0 +1,54 @@
+@import "varib";
+#post_show_content {
+  header {
+    text-align: center;
+    .date {
+      font-size: .9em;
+      color: $light;
+      margin:0;
+    }
+    h1 {
+      margin: 0;
+    }
+
+  }
+  hr{
+    margin: 2em auto;
+  }
+}
+#share_box {
+  text-align: center;
+  p {
+    padding:0 0 1em 0;
+    margin:0;
+    font-weight:700;
+    text-transform: uppercase;
+    color: $dark;
+    font-size:.8em;
+  }
+  i {
+    color: $dark;
+    padding: 1em 1.5em;
+    &:hover {
+      color: $highlight;
+      cursor: pointer;
+    }
+  }
+}
+
+#admin_links {
+  border-top: 1px solid $border;
+  border-bottom: 1px solid $border;
+  text-align: center;
+  padding: 1em 0;
+  margin:3em 0;
+  a{
+    color: $light;
+    margin: 0 1em;
+    font-weight: 700;
+    font-size: .8em;
+    text-transform: uppercase;
+    text-decoration: none;
+
+  }
+}

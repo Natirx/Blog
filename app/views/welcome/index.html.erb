@@ -1,0 +1,27 @@
+<div class="wrapper wrapper_padding clearfix">
+  <div class="col homepage">
+    <h2>Portfolio</h2>
+    <hr>
+    <% @projects.each do |project| %>
+    <div class="col-img">
+        <%= link_to project do %>
+        <%= image_tag project.picture.url(:large) %>
+        <% end %>
+      </div> 
+    <% end %>
+    
+  </div>
+  </div>
+<div class="wrapper wrapper_padding clearfix">
+  <div class="col about homepage">
+    <h2>About Me</h2>
+    <hr>
+    <p>Hello!</p>
+    <p>I'm Andriy, 21 years old.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>g
+  </div>
+
+
+</div>
+
+</div>
