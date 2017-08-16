@@ -8,7 +8,10 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
-
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :bucket => 'S3_BUCKET_NAME'
+  }
   # Show full error reports.
   config.consider_all_requests_local = true
 
