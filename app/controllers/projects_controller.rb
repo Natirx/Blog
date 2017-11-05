@@ -11,17 +11,18 @@ class ProjectsController < ApplicationController
     @project = Project.new
   end
 
-  def create
-    @project = Project.new project_params
-    if @project.save
-      redirect_to @project, notice: "Project save"
-    else
-      render 'new'
-    end
+  def create 
+  @project = Project.new project_params
+  if @project.save
+    redirect_to @project, notice: "Article Saved"
+  else
+    render 'new', notice: "Article not save"
   end
-  def edit
+end
 
+  def edit
   end
+
   def update
  if @project.update project_params
    redirect_to @project, notice: "Project update"

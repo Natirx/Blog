@@ -9,14 +9,15 @@ gem 'will_paginate', '~> 3.1'
 gem 'mail_form', '~> 1.5', '>= 1.5.1'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
-gem 'paperclip'
-gem 'aws-sdk', '~> 2.3'
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem 'aws-sdk', '~> 2.10', '>= 2.10.28'
 gem 'devise', '~> 4.2'
 gem 'redcarpet', '~> 3.3', '>= 3.3.4'
 gem 'pygments.rb', '~> 0.6.3'
@@ -38,6 +39,7 @@ group :production do
 end
 group :development, :test do
   gem 'sqlite3'
+  gem 'dotenv-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 end
@@ -45,6 +47,7 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
+  gem 'dotenv-rails'
   gem 'listen', '~> 3.0.5'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

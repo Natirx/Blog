@@ -12,9 +12,7 @@ class PostsController < ApplicationController
   def create 
     @post = Post.new post_params
     if @post.save
-
-
-      redirect_to @post, notice: "Hello Yaroslav. Article Saved"
+      redirect_to @post, notice: "Article Saved"
     else
       render 'new', notice: "Article not save"
     end

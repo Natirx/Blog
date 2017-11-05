@@ -5,13 +5,10 @@ Rails.application.configure do
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
-
+  
   # Do not eager load code on boot.
   config.eager_load = false
-  config.paperclip_defaults = {
-    :storage => :s3,
-    :bucket => 'S3_BUCKET_NAME'
-  }
+  
   # Show full error reports.
   config.consider_all_requests_local = true
 
@@ -28,7 +25,16 @@ Rails.application.configure do
 
     config.cache_store = :null_store
   end
-
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_credentials: {
+      bucket: ENV.fetch('S3_BUCKET_NAME'),
+      access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
+      secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+      s3_region: ENV.fetch('S3_REGION'),
+      s3_host_name: ENV.fetch('S3_HOST_NAME')
+    }
+  }
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
